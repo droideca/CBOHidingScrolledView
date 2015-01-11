@@ -414,6 +414,7 @@
 				A5E13D921A4F2673001D7628 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5E13D931A4F2673001D7628 /* Build configuration list for PBXNativeTarget "HidingViewTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				A5E13D951A4F2673001D7628 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
