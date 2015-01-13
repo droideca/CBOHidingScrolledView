@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A659281A6330EA00178403 /* CBHideScrolledView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A659271A6330EA00178403 /* CBHideScrolledView.m */; };
 		A5E13D731A4F2673001D7628 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E13D721A4F2673001D7628 /* main.m */; };
 		A5E13D761A4F2673001D7628 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E13D751A4F2673001D7628 /* AppDelegate.m */; };
 		A5E13D791A4F2673001D7628 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E13D781A4F2673001D7628 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5A659261A6330EA00178403 /* CBHideScrolledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHideScrolledView.h; sourceTree = "<group>"; };
+		A5A659271A6330EA00178403 /* CBHideScrolledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHideScrolledView.m; sourceTree = "<group>"; };
 		A5E13D6D1A4F2673001D7628 /* HidingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HidingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E13D711A4F2673001D7628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E13D721A4F2673001D7628 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				A5E13D7D1A4F2673001D7628 /* Images.xcassets */,
 				A5E13D7F1A4F2673001D7628 /* LaunchScreen.xib */,
 				A5E13D701A4F2673001D7628 /* Supporting Files */,
+				A5A659261A6330EA00178403 /* CBHideScrolledView.h */,
+				A5A659271A6330EA00178403 /* CBHideScrolledView.m */,
 			);
 			path = HidingView;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E13D791A4F2673001D7628 /* ViewController.m in Sources */,
+				A5A659281A6330EA00178403 /* CBHideScrolledView.m in Sources */,
 				A5E13D761A4F2673001D7628 /* AppDelegate.m in Sources */,
 				A5E13D731A4F2673001D7628 /* main.m in Sources */,
 			);

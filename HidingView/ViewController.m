@@ -7,22 +7,25 @@
 //
 
 #import "ViewController.h"
-
+#import "CBHideScrolledView.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
-bool dragging;
-float initialYContentOffset;
-float previousYOffset;
+
 NSArray *tableData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", @"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-
+    
+    tableController = [[CBHideScrolledView alloc] init];
+    tableController.constraintPositionY = self.hidingViewPositionY;
+    tableController.hidingView = self.hidingView;
+    self.tableView.delegate = (id)tableController;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,82 +59,13 @@ NSArray *tableData;
    
 }
 
-
-#pragma mark Scrollview
-
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
-{
-    float delta = previousYOffset-scrollView.contentOffset.y;
-    [self moveHeaderToY:delta];
+- (void)setScrollView:(UIScrollView *)scrollView {
+    scrollView.delegate = self.hidingView;
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    dragging=YES;
-}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-    if(dragging){
-        
-        //Move toolbar
-        float yCurrentOffset =  scrollView.contentOffset.y;
-        
-        //Avoid a wrong behaviour when scroll bounce to top
-        if(yCurrentOffset>initialYContentOffset){
-            
-            float delta = previousYOffset-yCurrentOffset;
-            [self moveHeaderToY:self.hidingView.frame.origin.y + delta];
-        }
-        previousYOffset = yCurrentOffset;
-    }
-    
-}
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    dragging=NO;
-}
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    previousYOffset=scrollView.contentOffset.y;
-}
 
-- (void) moveHeaderToY: (float) y
-{
-    float toolbarInitialY = -self.hidingView.frame.size.height+[self minHeightWithoutHide];
-    
-    self.hidingViewPositionY.constant = MAX(MIN(y, 0), toolbarInitialY);
-    
-    /*CGRect rect = self.hidingView.frame;
-    rect.origin.y =MAX(MIN(y, 0), toolbarInitialY);
-    [self.hidingView setFrame:rect];
-    
-    CGRect table = self.tableView.frame;
-    table.origin.y = rect.origin.y + rect.size.height;
-    [self.tableView setFrame:table];*/
-    
-}
-
-- (void) moveHeaderFrameToY: (float) y
-{
-    float toolbarInitialY = -self.hidingView.frame.size.height+[self minHeightWithoutHide];
-    
-    CGRect rect = self.hidingView.frame;
-    rect.origin.y =MAX(MIN(y, 0), toolbarInitialY);
-    [self.hidingView setFrame:rect];
-    
-    CGRect table = self.tableView.frame;
-    table.origin.y = rect.origin.y + rect.size.height;
-    [self.tableView setFrame:table];
-    
-}
-
-- (float) minHeightWithoutHide
-{
-    return 20;
-}
 
 @end

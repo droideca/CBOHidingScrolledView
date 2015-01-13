@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBHideScrolledView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    CBHideScrolledView *tableController;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *hidingView;
+@property (weak, nonatomic) IBOutlet UIView  *hidingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hidingViewPositionY;
+@property () CBHideScrolledView *tableController;
+
 
 @end
 
