@@ -26,28 +26,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-H9-rGO">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2YH-xT-73b">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2YH-xT-73b" id="KIz-Re-zXI">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-VI-EQR">
-                                                    <rect key="frame" x="-223" y="0.0" width="44" height="43"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="EaA-Wt-oRr"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="zYW-VI-EQR" firstAttribute="top" secondItem="KIz-Re-zXI" secondAttribute="top" id="4Vh-II-wCc"/>
-                                                <constraint firstItem="zYW-VI-EQR" firstAttribute="leading" secondItem="KIz-Re-zXI" secondAttribute="leading" constant="-223" id="4hv-KA-YI2"/>
-                                                <constraint firstAttribute="bottom" secondItem="zYW-VI-EQR" secondAttribute="bottom" id="q6f-Kx-26Y"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="x5l-rp-Fwn"/>
                                 </connections>

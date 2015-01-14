@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CBHideScrolledView : NSObject <UITableViewDelegate>
-//@property NSLayoutConstraint *hidingViewPositionY;
-@property(nonatomic,retain) id parent;
 @property (weak, nonatomic) NSLayoutConstraint *constraintPositionY;
 @property (weak, nonatomic) UIView *hidingView;
 

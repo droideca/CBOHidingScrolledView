@@ -24,7 +24,7 @@ NSArray *tableData;
     tableController = [[CBHideScrolledView alloc] init];
     tableController.constraintPositionY = self.hidingViewPositionY;
     tableController.hidingView = self.hidingView;
-    self.tableView.delegate = (id)tableController;
+    self.tableView.delegate = tableController;
     
 }
 
@@ -53,19 +53,6 @@ NSArray *tableData;
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     return cell;
 }
-
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
-{
-   
-}
-
-- (void)setScrollView:(UIScrollView *)scrollView {
-    scrollView.delegate = self.hidingView;
-}
-
-
-
-
 
 
 @end

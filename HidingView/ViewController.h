@@ -16,8 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView  *hidingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hidingViewPositionY;
-@property () CBHideScrolledView *tableController;
-
 
 @end
 
