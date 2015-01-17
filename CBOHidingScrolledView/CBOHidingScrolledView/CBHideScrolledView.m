@@ -13,6 +13,7 @@
 bool dragging;
 float initialYContentOffset;
 float previousYOffset;
+float initialYHidingViewPosition;
 
 
 - (id) init
@@ -24,10 +25,24 @@ float previousYOffset;
     return self;
 }
 
+- (id)initWithHidingView:(UIView *)hidingView constraint:(NSLayoutConstraint *)constraint {
+    self = [super init];
+    
+    if (self) {
+        self.hidingView = hidingView;
+        self.constraintPositionY = constraint;
+        self.minHeightWithoutHide = 0.0;
+        initialYHidingViewPosition = hidingView.frame.origin.y;
+    }
+    
+    return self;
+}
+
+
 - (void) scrollHidingViewToY: (float) y
 {
     float toolbarInitialY = -self.hidingView.frame.size.height+[self minHeightWithoutHide];
-    self.constraintPositionY.constant = MAX(MIN(y, 0), toolbarInitialY);
+    self.constraintPositionY.constant = MAX(MIN(y, initialYHidingViewPosition), toolbarInitialY);
     
 }
 

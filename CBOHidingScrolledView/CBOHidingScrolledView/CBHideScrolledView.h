@@ -13,4 +13,6 @@
 @property (weak, nonatomic) UIView *hidingView;
 @property float minHeightWithoutHide;
 
+- (id)initWithHidingView:(UIView *)hidingView constraint:(NSLayoutConstraint *)constraint;
+
 @end
