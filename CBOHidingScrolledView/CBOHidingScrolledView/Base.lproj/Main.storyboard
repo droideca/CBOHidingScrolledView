@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrG-mU-t1D">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="iyZ-DI-csv"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ski-7s-K4m">
+                                <rect key="frame" x="0.0" y="150" width="600" height="449"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="A2F-as-1mY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xrG-mU-t1D" secondAttribute="trailing" id="BI0-yF-fKC"/>
+                            <constraint firstItem="xrG-mU-t1D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CWN-Dz-x68"/>
+                            <constraint firstItem="xrG-mU-t1D" firstAttribute="trailing" secondItem="Ski-7s-K4m" secondAttribute="trailing" id="Rgc-j4-uaR"/>
+                            <constraint firstItem="Ski-7s-K4m" firstAttribute="top" secondItem="xrG-mU-t1D" secondAttribute="bottom" id="f5o-Ze-P95"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ski-7s-K4m" secondAttribute="bottom" constant="1" id="oRK-3i-Rpo"/>
+                            <constraint firstItem="xrG-mU-t1D" firstAttribute="leading" secondItem="Ski-7s-K4m" secondAttribute="leading" id="qM8-nK-0YV"/>
+                            <constraint firstItem="xrG-mU-t1D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z5R-s0-Y9u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hidingView" destination="xrG-mU-t1D" id="TKF-1N-Mj7"/>
+                        <outlet property="hidingViewPositionY" destination="CWN-Dz-x68" id="1po-G0-Fyg"/>
+                        <outlet property="tableView" destination="Ski-7s-K4m" id="2bJ-Nm-cV8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
