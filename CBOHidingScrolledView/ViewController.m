@@ -11,16 +11,15 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) CBHidingScrolledView *tableController;
+@property (strong, nonatomic) NSArray *tableData;
 
 @end
 
 @implementation ViewController
 
-NSArray *tableData;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", @"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    self.tableData = [NSArray arrayWithObjects:@"A Christmas Carol", @"Night Terrors",@"The Doctor's Wife",@"The Impossible Astronaut",@"Day of the Moon",@"The Rebel Flesh",@"The Almost People",@"A Good Man Goes to War",@"The Curse of the Black Spot",@"The God Complex",@"The Girl Who Waited",@"Closing Time",@"The Wedding of River Song",@"Let's Kill Hitler",@"The Doctor, the Widow and the Wardrobe",@"Dinosaurs on a Spaceship",@"A Town Called Mercy",@"Asylum of the Daleks",@"The Angels Take Manhattan",@"The Power of Three",@"Hide",@"Cold War",@"The Crimson Horror",@"The Snowmen",@"Journey to the Centre of the TARDIS",@"The Bells of Saint John",@"The Rings of Akhaten",@"Nightmare in Silver",@"The Name of the Doctor", nil];
     
     self.tableController = [[CBHidingScrolledView alloc] initWithHidingView:self.hidingView constraint:self.hidingViewPositionY];
     self.tableView.delegate = self.tableController;
@@ -36,7 +35,7 @@ NSArray *tableData;
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return tableData.count;
+    return self.tableData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -49,7 +48,7 @@ NSArray *tableData;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
     return cell;
 }
 
