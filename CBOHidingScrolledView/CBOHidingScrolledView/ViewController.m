@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "CBHideScrolledView.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) CBHidingScrolledView *tableController;
 
 @end
 
@@ -21,9 +22,8 @@ NSArray *tableData;
     [super viewDidLoad];
     tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", @"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
-    tableController = [[CBHideScrolledView alloc] initWithHidingView:self.hidingView constraint:self.hidingViewPositionY];
-    //tableController.minHeightWithoutHide = 20.0; // size of the status bar
-    self.tableView.delegate = tableController;
+    self.tableController = [[CBHidingScrolledView alloc] initWithHidingView:self.hidingView constraint:self.hidingViewPositionY];
+    self.tableView.delegate = self.tableController;
     
 }
 

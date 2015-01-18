@@ -1,49 +1,52 @@
 //
 //  CBHideScrolledView.m
-//  HidingView
+//  CBOHidingScrolledview
 //
 //  Created by Carolina Barreiro Cancela on 11/1/15.
 //  Copyright (c) 2015 Carolina Barreiro Cancela. All rights reserved.
 //
 
-#import "CBHideScrolledView.h"
+#import "CBHidingScrolledView.h"
 
-@implementation CBHideScrolledView
+@interface CBHidingScrolledView()
+
+@property (weak, nonatomic) NSLayoutConstraint *constraintPositionY;
+@property (weak, nonatomic) UIView *hidingView;
+@property float heightWithoutHide;
+
+@end
+
+@implementation CBHidingScrolledView
 
 bool dragging;
 float initialYContentOffset;
 float previousYOffset;
-float initialYHidingViewPosition;
+float minConstraintValue;
 
-
-- (id) init
-{
-    if (self = [super init])
-    {
-        self.minHeightWithoutHide = 0.0;
-    }
-    return self;
-}
-
-- (id)initWithHidingView:(UIView *)hidingView constraint:(NSLayoutConstraint *)constraint {
+- (id)initWithHidingView:(UIView *)hidingView constraint:(NSLayoutConstraint *)constraint heightWithoutHide:(float)minHeight {
     self = [super init];
     
     if (self) {
         self.hidingView = hidingView;
         self.constraintPositionY = constraint;
-        self.minHeightWithoutHide = 0.0;
-        initialYHidingViewPosition = hidingView.frame.origin.y;
+        self.heightWithoutHide = minHeight;
+        minConstraintValue = -self.hidingView.frame.size.height+ self.heightWithoutHide;
     }
     
     return self;
+    
 }
 
 
-- (void) scrollHidingViewToY: (float) y
+- (id)initWithHidingView:(UIView *)hidingView constraint:(NSLayoutConstraint *)constraint {
+    return [self initWithHidingView:hidingView constraint:constraint heightWithoutHide:0.0];
+}
+
+
+- (void) scrollHidingViewWithDelta: (float) delta
 {
-    float toolbarInitialY = -self.hidingView.frame.size.height+[self minHeightWithoutHide];
-    self.constraintPositionY.constant = MAX(MIN(y, initialYHidingViewPosition), toolbarInitialY);
-    
+    float newValueConstraint = delta+self.constraintPositionY.constant;
+    self.constraintPositionY.constant = MAX(MIN(newValueConstraint, 0), minConstraintValue);
 }
 
 
@@ -52,7 +55,7 @@ float initialYHidingViewPosition;
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
 {
     float delta = previousYOffset-scrollView.contentOffset.y;
-    [self scrollHidingViewToY:delta];
+    [self scrollHidingViewWithDelta:delta];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -70,7 +73,7 @@ float initialYHidingViewPosition;
         if(yCurrentOffset>initialYContentOffset){
             
             float delta = previousYOffset-yCurrentOffset;
-            [self scrollHidingViewToY:self.hidingView.frame.origin.y + delta];
+            [self scrollHidingViewWithDelta:delta];
         }
         previousYOffset = yCurrentOffset;
     }

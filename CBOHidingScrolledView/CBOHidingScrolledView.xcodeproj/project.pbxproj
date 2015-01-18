@@ -14,7 +14,7 @@
 		A54B55501A6ADE1900AE2279 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54B554F1A6ADE1900AE2279 /* Images.xcassets */; };
 		A54B55531A6ADE1900AE2279 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54B55511A6ADE1900AE2279 /* LaunchScreen.xib */; };
 		A54B555F1A6ADE1A00AE2279 /* CBOHidingScrolledViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B555E1A6ADE1A00AE2279 /* CBOHidingScrolledViewTests.m */; };
-		A54B556A1A6AE12B00AE2279 /* CBHideScrolledView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B55691A6AE12B00AE2279 /* CBHideScrolledView.m */; };
+		A54B556A1A6AE12B00AE2279 /* CBHidingScrolledView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B55691A6AE12B00AE2279 /* CBHidingScrolledView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		A54B55581A6ADE1A00AE2279 /* CBOHidingScrolledViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBOHidingScrolledViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54B555D1A6ADE1A00AE2279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A54B555E1A6ADE1A00AE2279 /* CBOHidingScrolledViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBOHidingScrolledViewTests.m; sourceTree = "<group>"; };
-		A54B55681A6AE12B00AE2279 /* CBHideScrolledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHideScrolledView.h; sourceTree = "<group>"; };
-		A54B55691A6AE12B00AE2279 /* CBHideScrolledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHideScrolledView.m; sourceTree = "<group>"; };
+		A54B55681A6AE12B00AE2279 /* CBHidingScrolledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBHidingScrolledView.h; sourceTree = "<group>"; };
+		A54B55691A6AE12B00AE2279 /* CBHidingScrolledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBHidingScrolledView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 				A54B55491A6ADE1900AE2279 /* ViewController.h */,
 				A54B554A1A6ADE1900AE2279 /* ViewController.m */,
 				A54B554C1A6ADE1900AE2279 /* Main.storyboard */,
-				A54B55681A6AE12B00AE2279 /* CBHideScrolledView.h */,
-				A54B55691A6AE12B00AE2279 /* CBHideScrolledView.m */,
+				A54B55681A6AE12B00AE2279 /* CBHidingScrolledView.h */,
+				A54B55691A6AE12B00AE2279 /* CBHidingScrolledView.m */,
 				A54B554F1A6ADE1900AE2279 /* Images.xcassets */,
 				A54B55511A6ADE1900AE2279 /* LaunchScreen.xib */,
 				A54B55421A6ADE1900AE2279 /* Supporting Files */,
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54B554B1A6ADE1900AE2279 /* ViewController.m in Sources */,
-				A54B556A1A6AE12B00AE2279 /* CBHideScrolledView.m in Sources */,
+				A54B556A1A6AE12B00AE2279 /* CBHidingScrolledView.m in Sources */,
 				A54B55481A6ADE1900AE2279 /* AppDelegate.m in Sources */,
 				A54B55451A6ADE1900AE2279 /* main.m in Sources */,
 			);

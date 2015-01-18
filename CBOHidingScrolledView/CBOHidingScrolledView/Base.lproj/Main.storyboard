@@ -33,15 +33,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrG-mU-t1D">
-                                <rect key="frame" x="0.0" y="64" width="600" height="86"/>
+                                <rect key="frame" x="0.0" y="131" width="600" height="86"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="iyZ-DI-csv"/>
                                 </constraints>
                             </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-Rl-XDi" userLabel="nohiding">
+                                <rect key="frame" x="0.0" y="64" width="600" height="67"/>
+                                <color key="backgroundColor" red="0.72064444930000005" green="1" blue="0.72708448420000005" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="AYz-1M-4VM"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ski-7s-K4m">
-                                <rect key="frame" x="0.0" y="150" width="600" height="449"/>
+                                <rect key="frame" x="0.0" y="217" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="A2F-as-1mY"/>
@@ -50,10 +57,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hhU-Rl-XDi" firstAttribute="leading" secondItem="xrG-mU-t1D" secondAttribute="leading" id="8Wi-ya-mue"/>
                             <constraint firstAttribute="trailing" secondItem="xrG-mU-t1D" secondAttribute="trailing" id="BI0-yF-fKC"/>
-                            <constraint firstItem="xrG-mU-t1D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="CWN-Dz-x68"/>
+                            <constraint firstItem="hhU-Rl-XDi" firstAttribute="trailing" secondItem="xrG-mU-t1D" secondAttribute="trailing" id="R21-Ca-vY9"/>
                             <constraint firstItem="xrG-mU-t1D" firstAttribute="trailing" secondItem="Ski-7s-K4m" secondAttribute="trailing" id="Rgc-j4-uaR"/>
+                            <constraint firstItem="hhU-Rl-XDi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aKZ-FJ-vmr"/>
                             <constraint firstItem="Ski-7s-K4m" firstAttribute="top" secondItem="xrG-mU-t1D" secondAttribute="bottom" id="f5o-Ze-P95"/>
+                            <constraint firstItem="xrG-mU-t1D" firstAttribute="top" secondItem="hhU-Rl-XDi" secondAttribute="bottom" id="hm1-E7-ceW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ski-7s-K4m" secondAttribute="bottom" constant="1" id="oRK-3i-Rpo"/>
                             <constraint firstItem="xrG-mU-t1D" firstAttribute="leading" secondItem="Ski-7s-K4m" secondAttribute="leading" id="qM8-nK-0YV"/>
                             <constraint firstItem="xrG-mU-t1D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z5R-s0-Y9u"/>
@@ -62,7 +72,7 @@
                     <navigationItem key="navigationItem" id="B2M-bu-HiU"/>
                     <connections>
                         <outlet property="hidingView" destination="xrG-mU-t1D" id="TKF-1N-Mj7"/>
-                        <outlet property="hidingViewPositionY" destination="CWN-Dz-x68" id="1po-G0-Fyg"/>
+                        <outlet property="hidingViewPositionY" destination="hm1-E7-ceW" id="Us3-io-3oc"/>
                         <outlet property="tableView" destination="Ski-7s-K4m" id="2bJ-Nm-cV8"/>
                     </connections>
                 </viewController>
